@@ -46,6 +46,20 @@ const CommonFormats = {
         "image/gif",
         [Category.IMAGE, Category.VIDEO]
     ),
+    TIFF: new FormatDefinition(
+        "Tagged Image File Format",
+        "tiff",
+        "tiff",
+        "image/tiff",
+        Category.IMAGE
+    ),
+    BMP: new FormatDefinition(
+        "Bitmap Image",
+        "bmp",
+        "bmp",
+        "image/bmp",
+        Category.IMAGE
+    ),
     SVG: new FormatDefinition(
         "Scalable Vector Graphics",
         "svg",
@@ -80,6 +94,13 @@ const CommonFormats = {
         "csv",
         "csv",
         "text/csv",
+        Category.DATA
+    ),
+    TSV: new FormatDefinition(
+        "Tab Separated Values",
+        "tsv",
+        "tsv",
+        "text/tab-separated-values",
         Category.DATA
     ),
     TEXT: new FormatDefinition(
@@ -146,12 +167,82 @@ const CommonFormats = {
         "audio/flac",
         Category.AUDIO
     ),
+    AAC: new FormatDefinition(
+        "Advanced Audio Coding",
+        "aac",
+        "aac",
+        "audio/aac",
+        Category.AUDIO
+    ),
+    M4A: new FormatDefinition(
+        "MPEG-4 Audio",
+        "m4a",
+        "m4a",
+        "audio/mp4",
+        Category.AUDIO
+    ),
+    OPUS: new FormatDefinition(
+        "Opus Audio",
+        "opus",
+        "opus",
+        "audio/opus",
+        Category.AUDIO
+    ),
+    AIFF: new FormatDefinition(
+        "Audio Interchange File Format",
+        "aiff",
+        "aiff",
+        "audio/aiff",
+        Category.AUDIO
+    ),
+    WMA: new FormatDefinition(
+        "Windows Media Audio",
+        "wma",
+        "wma",
+        "audio/x-ms-wma",
+        Category.AUDIO
+    ),
     // video
     MP4: new FormatDefinition(
         "MPEG-4 Part 14",
         "mp4",
         "mp4",
         "video/mp4",
+        Category.VIDEO
+    ),
+    WEBM: new FormatDefinition(
+        "WebM Video",
+        "webm",
+        "webm",
+        "video/webm",
+        Category.VIDEO
+    ),
+    MKV: new FormatDefinition(
+        "Matroska Video",
+        "mkv",
+        "mkv",
+        "video/x-matroska",
+        Category.VIDEO
+    ),
+    MOV: new FormatDefinition(
+        "QuickTime Movie",
+        "mov",
+        "mov",
+        "video/quicktime",
+        Category.VIDEO
+    ),
+    AVI: new FormatDefinition(
+        "Audio Video Interleave",
+        "avi",
+        "avi",
+        "video/x-msvideo",
+        Category.VIDEO
+    ),
+    FLV: new FormatDefinition(
+        "Flash Video",
+        "flv",
+        "flv",
+        "video/x-flv",
         Category.VIDEO
     ),
     // archive
@@ -169,6 +260,34 @@ const CommonFormats = {
         "pdf",
         "application/pdf",
         Category.DOCUMENT
+    ),
+    EPUB: new FormatDefinition(
+        "Electronic Publication",
+        "epub",
+        "epub",
+        "application/epub+zip",
+        Category.DOCUMENT
+    ),
+    RTF: new FormatDefinition(
+        "Rich Text Format",
+        "rtf",
+        "rtf",
+        "application/rtf",
+        Category.DOCUMENT
+    ),
+    ODT: new FormatDefinition(
+        "OpenDocument Text",
+        "odt",
+        "odt",
+        "application/vnd.oasis.opendocument.text",
+        Category.DOCUMENT
+    ),
+    LATEX: new FormatDefinition(
+        "LaTeX Document",
+        "latex",
+        "tex",
+        "application/x-tex",
+        [Category.DOCUMENT, Category.TEXT]
     ),
     // documents - Microsoft Office
     DOCX: new FormatDefinition(
