@@ -259,16 +259,16 @@ test("png → webp", async () => {
 
 }, { timeout: 60000 });
 
-test("jpeg → png", async () => {
+test("webp → jpeg", async () => {
 
   const conversion = await attemptConversion(
     ["colors_50x50.png"],
-    CommonFormats.JPEG,
-    CommonFormats.PNG
+    CommonFormats.WEBP,
+    CommonFormats.JPEG
   );
 
   expect(conversion).toBeTruthy();
-  expect(conversion!.path.map(c => c.format.mime)).toEqual(["image/jpeg", "image/png"]);
+  expect(conversion!.path.map(c => c.format.mime)).toEqual(["image/webp", "image/jpeg"]);
 
 }, { timeout: 60000 });
 

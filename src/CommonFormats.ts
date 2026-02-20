@@ -198,7 +198,7 @@ const CommonFormats = {
     AIFF: new FormatDefinition(
         "Audio Interchange File Format",
         "aiff",
-        "aif",
+        "aiff",
         "audio/aiff",
         Category.AUDIO
     ),
