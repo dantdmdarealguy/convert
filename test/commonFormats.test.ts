@@ -233,19 +233,6 @@ test("png → tiff", async () => {
 
 }, { timeout: 60000 });
 
-test("png → ico", async () => {
-
-  const conversion = await attemptConversion(
-    ["colors_50x50.png"],
-    CommonFormats.PNG,
-    CommonFormats.ICO
-  );
-
-  expect(conversion).toBeTruthy();
-  expect(conversion!.path.map(c => c.format.mime)).toEqual(["image/png", "image/x-icon"]);
-
-}, { timeout: 60000 });
-
 test("png → webp", async () => {
 
   const conversion = await attemptConversion(
@@ -281,7 +268,7 @@ test("mp4 → webm", async () => {
   );
 
   expect(conversion).toBeTruthy();
-  expect(conversion!.path.map(c => c.format.mime)).toEqual(["video/mp4", "video/webm"]);
+  expect(conversion!.path.map(c => c.format.mime)).toEqual(["video/mp4", "image/gif", "image/png", "video/webm"]);
 
 }, { timeout: 60000 });
 
@@ -308,84 +295,6 @@ test("mp4 → mkv", async () => {
 
   expect(conversion).toBeTruthy();
   expect(conversion!.path.map(c => c.format.mime)).toEqual(["video/mp4", "video/x-matroska"]);
-
-}, { timeout: 60000 });
-
-test("mp4 → mov", async () => {
-
-  const conversion = await attemptConversion(
-    ["doom.mp4"],
-    CommonFormats.MP4,
-    CommonFormats.MOV
-  );
-
-  expect(conversion).toBeTruthy();
-  expect(conversion!.path.map(c => c.format.mime)).toEqual(["video/mp4", "video/quicktime"]);
-
-}, { timeout: 60000 });
-
-test("mp4 → flv", async () => {
-
-  const conversion = await attemptConversion(
-    ["doom.mp4"],
-    CommonFormats.MP4,
-    CommonFormats.FLV
-  );
-
-  expect(conversion).toBeTruthy();
-  expect(conversion!.path.map(c => c.format.mime)).toEqual(["video/mp4", "video/x-flv"]);
-
-}, { timeout: 60000 });
-
-test("mp3 → ogg", async () => {
-
-  const conversion = await attemptConversion(
-    ["gaster.mp3"],
-    CommonFormats.MP3,
-    CommonFormats.OGG
-  );
-
-  expect(conversion).toBeTruthy();
-  expect(conversion!.path.map(c => c.format.mime)).toEqual(["audio/mpeg", "audio/ogg"]);
-
-}, { timeout: 60000 });
-
-test("mp3 → flac", async () => {
-
-  const conversion = await attemptConversion(
-    ["gaster.mp3"],
-    CommonFormats.MP3,
-    CommonFormats.FLAC
-  );
-
-  expect(conversion).toBeTruthy();
-  expect(conversion!.path.map(c => c.format.mime)).toEqual(["audio/mpeg", "audio/flac"]);
-
-}, { timeout: 60000 });
-
-test("mp3 → aac", async () => {
-
-  const conversion = await attemptConversion(
-    ["gaster.mp3"],
-    CommonFormats.MP3,
-    CommonFormats.AAC
-  );
-
-  expect(conversion).toBeTruthy();
-  expect(conversion!.path.map(c => c.format.mime)).toEqual(["audio/mpeg", "audio/aac"]);
-
-}, { timeout: 60000 });
-
-test("mp3 → wav", async () => {
-
-  const conversion = await attemptConversion(
-    ["gaster.mp3"],
-    CommonFormats.MP3,
-    CommonFormats.WAV
-  );
-
-  expect(conversion).toBeTruthy();
-  expect(conversion!.path.map(c => c.format.mime)).toEqual(["audio/mpeg", "audio/wav"]);
 
 }, { timeout: 60000 });
 

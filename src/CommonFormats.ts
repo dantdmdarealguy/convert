@@ -60,13 +60,6 @@ const CommonFormats = {
         "image/bmp",
         Category.IMAGE
     ),
-    ICO: new FormatDefinition(
-        "Icon Image",
-        "ico",
-        "ico",
-        "image/x-icon",
-        Category.IMAGE
-    ),
     SVG: new FormatDefinition(
         "Scalable Vector Graphics",
         "svg",
