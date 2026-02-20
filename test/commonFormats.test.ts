@@ -207,6 +207,311 @@ test("txt → wav → flac", async () => {
 
 }, { timeout: 60000 });
 
+test("png → bmp", async () => {
+
+  const conversion = await attemptConversion(
+    ["colors_50x50.png"],
+    CommonFormats.PNG,
+    CommonFormats.BMP
+  );
+
+  expect(conversion).toBeTruthy();
+  expect(conversion!.path.map(c => c.format.mime)).toEqual(["image/png", "image/bmp"]);
+
+}, { timeout: 60000 });
+
+test("png → tiff", async () => {
+
+  const conversion = await attemptConversion(
+    ["colors_50x50.png"],
+    CommonFormats.PNG,
+    CommonFormats.TIFF
+  );
+
+  expect(conversion).toBeTruthy();
+  expect(conversion!.path.map(c => c.format.mime)).toEqual(["image/png", "image/tiff"]);
+
+}, { timeout: 60000 });
+
+test("png → ico", async () => {
+
+  const conversion = await attemptConversion(
+    ["colors_50x50.png"],
+    CommonFormats.PNG,
+    CommonFormats.ICO
+  );
+
+  expect(conversion).toBeTruthy();
+  expect(conversion!.path.map(c => c.format.mime)).toEqual(["image/png", "image/x-icon"]);
+
+}, { timeout: 60000 });
+
+test("png → webp", async () => {
+
+  const conversion = await attemptConversion(
+    ["colors_50x50.png"],
+    CommonFormats.PNG,
+    CommonFormats.WEBP
+  );
+
+  expect(conversion).toBeTruthy();
+  expect(conversion!.path.map(c => c.format.mime)).toEqual(["image/png", "image/webp"]);
+
+}, { timeout: 60000 });
+
+test("jpeg → png", async () => {
+
+  const conversion = await attemptConversion(
+    ["colors_50x50.png"],
+    CommonFormats.JPEG,
+    CommonFormats.PNG
+  );
+
+  expect(conversion).toBeTruthy();
+  expect(conversion!.path.map(c => c.format.mime)).toEqual(["image/jpeg", "image/png"]);
+
+}, { timeout: 60000 });
+
+test("mp4 → webm", async () => {
+
+  const conversion = await attemptConversion(
+    ["doom.mp4"],
+    CommonFormats.MP4,
+    CommonFormats.WEBM
+  );
+
+  expect(conversion).toBeTruthy();
+  expect(conversion!.path.map(c => c.format.mime)).toEqual(["video/mp4", "video/webm"]);
+
+}, { timeout: 60000 });
+
+test("mp4 → avi", async () => {
+
+  const conversion = await attemptConversion(
+    ["doom.mp4"],
+    CommonFormats.MP4,
+    CommonFormats.AVI
+  );
+
+  expect(conversion).toBeTruthy();
+  expect(conversion!.path.map(c => c.format.mime)).toEqual(["video/mp4", "video/x-msvideo"]);
+
+}, { timeout: 60000 });
+
+test("mp4 → mkv", async () => {
+
+  const conversion = await attemptConversion(
+    ["doom.mp4"],
+    CommonFormats.MP4,
+    CommonFormats.MKV
+  );
+
+  expect(conversion).toBeTruthy();
+  expect(conversion!.path.map(c => c.format.mime)).toEqual(["video/mp4", "video/x-matroska"]);
+
+}, { timeout: 60000 });
+
+test("mp4 → mov", async () => {
+
+  const conversion = await attemptConversion(
+    ["doom.mp4"],
+    CommonFormats.MP4,
+    CommonFormats.MOV
+  );
+
+  expect(conversion).toBeTruthy();
+  expect(conversion!.path.map(c => c.format.mime)).toEqual(["video/mp4", "video/quicktime"]);
+
+}, { timeout: 60000 });
+
+test("mp4 → flv", async () => {
+
+  const conversion = await attemptConversion(
+    ["doom.mp4"],
+    CommonFormats.MP4,
+    CommonFormats.FLV
+  );
+
+  expect(conversion).toBeTruthy();
+  expect(conversion!.path.map(c => c.format.mime)).toEqual(["video/mp4", "video/x-flv"]);
+
+}, { timeout: 60000 });
+
+test("mp3 → ogg", async () => {
+
+  const conversion = await attemptConversion(
+    ["gaster.mp3"],
+    CommonFormats.MP3,
+    CommonFormats.OGG
+  );
+
+  expect(conversion).toBeTruthy();
+  expect(conversion!.path.map(c => c.format.mime)).toEqual(["audio/mpeg", "audio/ogg"]);
+
+}, { timeout: 60000 });
+
+test("mp3 → flac", async () => {
+
+  const conversion = await attemptConversion(
+    ["gaster.mp3"],
+    CommonFormats.MP3,
+    CommonFormats.FLAC
+  );
+
+  expect(conversion).toBeTruthy();
+  expect(conversion!.path.map(c => c.format.mime)).toEqual(["audio/mpeg", "audio/flac"]);
+
+}, { timeout: 60000 });
+
+test("mp3 → aac", async () => {
+
+  const conversion = await attemptConversion(
+    ["gaster.mp3"],
+    CommonFormats.MP3,
+    CommonFormats.AAC
+  );
+
+  expect(conversion).toBeTruthy();
+  expect(conversion!.path.map(c => c.format.mime)).toEqual(["audio/mpeg", "audio/aac"]);
+
+}, { timeout: 60000 });
+
+test("mp3 → wav", async () => {
+
+  const conversion = await attemptConversion(
+    ["gaster.mp3"],
+    CommonFormats.MP3,
+    CommonFormats.WAV
+  );
+
+  expect(conversion).toBeTruthy();
+  expect(conversion!.path.map(c => c.format.mime)).toEqual(["audio/mpeg", "audio/wav"]);
+
+}, { timeout: 60000 });
+
+test("md → html", async () => {
+
+  const conversion = await attemptConversion(
+    ["markdown.md"],
+    CommonFormats.MD,
+    CommonFormats.HTML
+  );
+
+  expect(conversion).toBeTruthy();
+  expect(conversion!.path.map(c => c.format.mime)).toEqual([
+    "text/markdown", "text/html"
+  ]);
+
+}, { timeout: 60000 });
+
+test("md → epub", async () => {
+
+  const conversion = await attemptConversion(
+    ["markdown.md"],
+    CommonFormats.MD,
+    CommonFormats.EPUB
+  );
+
+  expect(conversion).toBeTruthy();
+  expect(conversion!.path.map(c => c.format.mime)).toEqual([
+    "text/markdown", "application/epub+zip"
+  ]);
+
+}, { timeout: 60000 });
+
+test("md → odt", async () => {
+
+  const conversion = await attemptConversion(
+    ["markdown.md"],
+    CommonFormats.MD,
+    CommonFormats.ODT
+  );
+
+  expect(conversion).toBeTruthy();
+  expect(conversion!.path.map(c => c.format.mime)).toEqual([
+    "text/markdown", "application/vnd.oasis.opendocument.text"
+  ]);
+
+}, { timeout: 60000 });
+
+test("md → rtf", async () => {
+
+  const conversion = await attemptConversion(
+    ["markdown.md"],
+    CommonFormats.MD,
+    CommonFormats.RTF
+  );
+
+  expect(conversion).toBeTruthy();
+  expect(conversion!.path.map(c => c.format.mime)).toEqual([
+    "text/markdown", "application/rtf"
+  ]);
+
+}, { timeout: 60000 });
+
+test("md → latex", async () => {
+
+  const conversion = await attemptConversion(
+    ["markdown.md"],
+    CommonFormats.MD,
+    CommonFormats.LATEX
+  );
+
+  expect(conversion).toBeTruthy();
+  expect(conversion!.path.map(c => c.format.mime)).toEqual([
+    "text/markdown", "application/x-tex"
+  ]);
+
+}, { timeout: 60000 });
+
+test("docx → epub", async () => {
+
+  const conversion = await attemptConversion(
+    ["word.docx"],
+    CommonFormats.DOCX,
+    CommonFormats.EPUB
+  );
+
+  expect(conversion).toBeTruthy();
+  expect(conversion!.path.map(c => c.format.mime)).toEqual([
+    "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    "application/epub+zip"
+  ]);
+
+}, { timeout: 60000 });
+
+test("docx → odt", async () => {
+
+  const conversion = await attemptConversion(
+    ["word.docx"],
+    CommonFormats.DOCX,
+    CommonFormats.ODT
+  );
+
+  expect(conversion).toBeTruthy();
+  expect(conversion!.path.map(c => c.format.mime)).toEqual([
+    "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    "application/vnd.oasis.opendocument.text"
+  ]);
+
+}, { timeout: 60000 });
+
+test("docx → rtf", async () => {
+
+  const conversion = await attemptConversion(
+    ["word.docx"],
+    CommonFormats.DOCX,
+    CommonFormats.RTF
+  );
+
+  expect(conversion).toBeTruthy();
+  expect(conversion!.path.map(c => c.format.mime)).toEqual([
+    "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    "application/rtf"
+  ]);
+
+}, { timeout: 60000 });
+
 // ==================================================================
 //                          END OF TESTS
 // ==================================================================
